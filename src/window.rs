@@ -54,17 +54,23 @@ impl epi::App for PasswordWindow {
 
         egui::CentralPanel::default().show(ctx, |ui| {
             ui.with_layout(egui::Layout::top_down(egui::Align::Center), |ui| {
-            ui.heading("Please enter your password to unlock your wallet and access your funds.");
+                ui.spacing_mut().item_spacing.y = 10.0;
+                ui.heading(
+                    "Please enter your password to unlock your wallet and access your funds.",
+                );
 
-            ui.add(egui::TextEdit::singleline(label).hint_text("Password").password(true));
+                ui.add(
+                    egui::TextEdit::singleline(label)
+                        .hint_text("Password")
+                        .password(true),
+                );
 
-            if ui.button("Unlock").clicked() {
-                dbg!(label);
-            }
+                if ui.button("Unlock").clicked() {
+                    dbg!(label);
+                }
 
-            egui::warn_if_debug_build(ui);
+                egui::warn_if_debug_build(ui);
             });
         });
     }
 }
-

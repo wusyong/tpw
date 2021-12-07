@@ -5,7 +5,7 @@
 fn main() {
     let app = tpw::PasswordWindow::default();
     let native_options = eframe::NativeOptions {
-        initial_window_size: Some(eframe::egui::Vec2{ x: 400., y: 100.}),
+        initial_window_size: Some(eframe::egui::Vec2 { x: 400., y: 120. }),
         ..Default::default()
     };
     eframe::run_native(Box::new(app), native_options);
